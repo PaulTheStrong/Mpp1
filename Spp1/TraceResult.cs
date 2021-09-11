@@ -1,8 +1,9 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace Spp1
 {
-    class TraceResult
+    public class TraceResult
     {
         public ImmutableList<ThreadTraceResult> Threads;
 

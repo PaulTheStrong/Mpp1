@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
+using System.Threading;
 
 namespace Spp1
 {
-    class Tracer : ITracer
+    public class Tracer : ITracer
     {
 
         private ConcurrentDictionary<int, SingleThreadTracer> SingleThreadTracers = new ConcurrentDictionary<int, SingleThreadTracer>();
@@ -41,17 +42,6 @@ namespace Spp1
             A a = new A(tracer);
             a.Method1(0);
 
-            Thread[] threads = new Thread[5];
-            for (int i = 0; i < 5; i++)
-            {
-                threads[i] = new Thread(() => { a.Method1(0); });
-                threads[i].Start();
-            }
-
-            for (int i = 0; i < 5; i++)
-            {
-                threads[i].Join();
-            }
             foreach (var value in tracer.GetTraceResult().Threads)
             {
                 Console.WriteLine(value);

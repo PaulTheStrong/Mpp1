@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Spp1;
 
-namespace Spp1
+namespace SPPMarshalling
 {
-    public interface ITracer
+    interface IMarshaller
     {
-        void StartTrace();
-        void StopTrace();
-
-        TraceResult GetTraceResult();
+        public string Marshall(TraceResult traceResult);
     }
 }

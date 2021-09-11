@@ -7,7 +7,7 @@ using System.Collections.Immutable;
 
 namespace Spp1
 {
-    class ThreadTraceResult
+    public class ThreadTraceResult
     {
         public int ThreadId { get; private set; }
         public long ElapsedTime { get; private set; }
@@ -23,16 +23,6 @@ namespace Spp1
         {
             Methods = Methods.Add(method);
             ElapsedTime = ElapsedTime + method.ElapsedTime;
-        }
-
-        public override string ToString()
-        {
-            string result = "id = " + ThreadId + "\n elapsedTime : " + ElapsedTime + "ms\n methods: { ";
-            for (int i = 0; i < Methods.Count; i++)
-            {
-                result += Methods[i].ToString() + ", \n";
-            }
-            return result + " }";
         }
     }
 }

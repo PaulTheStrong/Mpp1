@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace Spp1
 {
-    class SingleThreadTracer
+    public class SingleThreadTracer
     {
 
         public ThreadTraceResult ThreadTraceResult { get; private set; }

@@ -7,7 +7,7 @@ using System.Collections.Immutable;
 
 namespace Spp1
 {
-    class MethodInfo
+    public class MethodInfo
     {
         public long ElapsedTime { get; internal set; }
         public string MethodName { get; internal set; }
@@ -21,21 +21,5 @@ namespace Spp1
             this.ClassName = ClassName;
             this.methods = ImmutableList<MethodInfo>.Empty;
         }
-
-        public override string ToString()
-        {
-            string result = "ElapsedTime: " + ElapsedTime + "ms. MethodName: " + MethodName + " ClassName: " + ClassName;
-            if (methods.Count != 0)
-            {
-                result += "Methods: {\n";
-                foreach (var method in methods)
-                {
-                    result += method.ToString() + "\n";
-                }
-                result += "}";
-            }
-            return result;
-        }
-
     }
 }

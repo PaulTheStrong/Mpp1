@@ -1,4 +1,6 @@
-﻿namespace Spp1
+﻿using System.Threading;
+
+namespace Spp1
 {
     class B
     {
