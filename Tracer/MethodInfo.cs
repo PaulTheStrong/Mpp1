@@ -4,13 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Immutable;
+using System.Xml.Serialization;
 
-namespace Tracer
+namespace SppTracer
 {
+    [XmlType("method")]
     public class MethodInfo
     {
+        [XmlAttribute]
         public long ElapsedTime { get; set; }
+        [XmlAttribute]
         public string MethodName { get; set; }
+        [XmlAttribute]
         public string ClassName { get; set; }
         public ImmutableList<MethodInfo> methods { get; internal set;  }
 

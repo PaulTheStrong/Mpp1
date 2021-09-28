@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using System.Collections.Immutable;
 using System.Xml.Serialization;
 
-namespace Tracer
+namespace SppTracer
 {
+    [XmlType("thread")]
     public class ThreadTraceResult
     {
+        [XmlAttribute]
         public int ThreadId { get; set; }
+        [XmlAttribute]
         public long ElapsedTime { get; set; }
         public ImmutableList<MethodInfo> Methods { get; set; }
 

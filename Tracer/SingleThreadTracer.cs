@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Immutable;
 using System.Diagnostics;
 
-namespace Tracer
+namespace SppTracer
 {
     public class SingleThreadTracer
     {

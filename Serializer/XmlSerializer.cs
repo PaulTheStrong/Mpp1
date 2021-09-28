@@ -1,4 +1,4 @@
-﻿using Tracer;
+﻿using SppTracer;
 using System.Xml.Serialization;
 using System;
 using System.Collections.Generic;
@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Serializer
 {
-    class XmlSerializer : ISerializer
+    public class XmlSerializer : ISerializer
     {
         private static readonly System.Xml.Serialization.XmlSerializer Serializer = new System.Xml.Serialization.XmlSerializer(typeof(TraceResult));
 
-        public string Marshall(TraceResult traceResult)
+        public string Serialize(TraceResult traceResult)
         {
             var sw = new StringWriter();
             Serializer.Serialize(sw, traceResult);

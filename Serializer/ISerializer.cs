@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tracer;
+using SppTracer;
 
 namespace Serializer
 {
     public interface ISerializer
     {
-        public string Marshall(TraceResult traceResult);
+        public string Serialize(TraceResult traceResult);
+        public static void Main(string[] args)
+        {
+
+        }
     }
 }

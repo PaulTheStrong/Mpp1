@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Threading;
 
-namespace Tracer
+namespace SppTracer
 {
     public class Tracer : ITracer
     {
@@ -38,14 +38,7 @@ namespace Tracer
 
         public static void Main(string[] args)
         {
-            Tracer tracer = new Tracer();
-            A a = new A(tracer);
-            a.Method1(0);
 
-            foreach (var value in tracer.GetTraceResult().Threads)
-            {
-                Console.WriteLine(value);
-            }
         }
     }
 }
